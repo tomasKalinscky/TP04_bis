@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido a CountryPedia</h1>
+    <h2>Donde encontraras toda la informacion sobre paises que buscas</h2>
+</div>
+
+<hr>
+
+@foreach (Pais paisRecorrido in ViewBag.ListaPaises)
+{
+    <div id="index">
+    <a href='@Url.Action("DetallePais", new {pais = @paisRecorrido.Nombre})'><img src="/fotos/@paisRecorrido.imgBandera"></a>
+    </div>
+}
+
